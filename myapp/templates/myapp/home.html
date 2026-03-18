@@ -1,0 +1,12 @@
+{% extends "myapp/base.html" %}
+
+
+{% block content %}
+<h2>Welcome to Agripal</h2>
+<p>Select a farm to enter environmental data:</p>
+<ul>
+    {% for farm in farms %}
+        <li><a href="{% url 'farm_env_data' farm.id %}">{{ farm.name }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}
